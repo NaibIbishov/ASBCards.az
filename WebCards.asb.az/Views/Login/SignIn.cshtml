@@ -1,0 +1,59 @@
+﻿@model DTO.DTOEntity.UserDTO
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Giriş</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/Login/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="~/Login/css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="wca-hotair-form">
+        <h1></h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree">
+                        <h2>Login</h2>
+                        <form method="post">
+                            <input type="text" asp-for="UserName" class="text" placeholder="Username" maxlength="50" required="" autofocus>
+                            <input type="password" asp-for="Password" class="password" maxlength="30" placeholder="Password" required="" autofocus>
+                            <button class="btn" type="submit">GİRİŞ ET</button>
+                        </form>
+                    </div>
+                    <div class="wca_form align-self" style="background-color:white">
+                        <div class="left_grid_info">
+                            <img src="~/Login/images/1.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+    </section>
+    <!-- //form section start -->
+</body>
+
+</html>
+
+

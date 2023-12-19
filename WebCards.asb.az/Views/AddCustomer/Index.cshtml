@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Hesab əlavə et</h5>
+                </div>
+                <div class="ibox-content">
+                    <form method="get">
+                        
+                       
+                        <div class="form-group  row">
+                            <label class="col-sm-2 col-form-label">Əlavə edən:</label>
+                            <div class="col-sm-10">
+                                <p>Naib</p>
+                            </div>
+                        </div>
+                        <div class="form-group  row">
+                            <label class="col-sm-2 col-form-label">Faylı seçin</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button asp-controller="Home" asp-action="Index" class="btn btn-white btn-sm" type="submit">İmtina</button>
+                                <button class="btn btn-primary btn-sm" type="submit">Əlavə et</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

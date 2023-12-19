@@ -1,0 +1,51 @@
+﻿
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+               @await Component.InvokeAsync("MyInfoList")
+                <div class="logo-element">
+                    A+
+                </div>
+            </li>
+            <li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-controller="Admin" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label">Admin</span></a>
+                    <a asp-controller="Login" asp-action="SignUp"><i class="fa fa-plus"></i> <span class="nav-label">Yeni istifadəçi</span></a>
+                    <a asp-controller="Admin" asp-action="Company"><i class="fa fa-plus"></i> <span class="nav-label">Şirkətlərin siyahısı</span></a>
+
+                    <a asp-controller="Home" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label"> Ana Səhifə</span></a>
+@*                     <a asp-controller="OrderCard" asp-action="Details"><i class="fa fa-plus"></i> <span class="nav-label"> Sifarişlərim</span></a>
+ *@                    <a asp-controller="Excel" asp-action="Upload"><i class="fa fa-plus"></i> <span class="nav-label"> Hesab əlavə et</span></a>
+                  @*   <a asp-controller="Home" asp-action="Account"><i class="fa fa-plus"></i> <span class="nav-label"> Hesablar</span></a> *@
+                }
+                
+                @if (User.IsInRole("User"))
+                {
+
+                    <a asp-controller="Home" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label"> Ana Səhifə</span></a>
+                    <a asp-controller="OrderCard" asp-action="Details"><i class="fa fa-plus"></i> <span class="nav-label"> Sifarişlərim</span></a>
+                    <a asp-controller="Excel" asp-action="Upload"><i class="fa fa-plus"></i> <span class="nav-label"> Hesab əlavə et</span></a>
+                    <a asp-controller="Home" asp-action="Account"><i class="fa fa-plus"></i> <span class="nav-label"> Hesablar</span></a>
+                }
+
+                
+                   
+@*                     <a asp-controller="OrderCard" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label">Kart sifarişi</span></a>
+ *@                   
+                                   
+                        
+
+                        
+                           
+
+
+
+                    
+
+            </li>
+        </ul>
+
+    </div>
+</nav>

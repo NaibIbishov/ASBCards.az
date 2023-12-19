@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DTO.DTOEntity.OrderCardDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Ad,Soyad,Ata adı</th>
+                                        <th>Card №</th>
+                                        <th>Finkod</th>
+                                        <th>Şirkət</th>
+                                        <th>Status</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="gradeX">
+                                            <td>@item.Name @item.Surname @item.FatherName</td>
+                                            <td>@item.CarNo</td>
+                                            <td>@item.Fincode</td>
+                                            <td>@item.Company</td>
+                                            <td>@item.Status</td>
+                                            </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+else if (User.IsInRole("User"))
+{
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Ad,Soyad,Ata adı</th>
+                                        <th>Card №</th>
+                                        <th>Finkod</th>
+                                        <th>Şirkət</th>
+                                        <th>Status</th>
+                                        <th>Redaktə et</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="gradeX">
+                                            <td>@item.Name @item.Surname @item.FatherName</td>
+                                            <td>@item.CarNo</td>
+                                            <td>@item.Fincode</td>
+                                            <td>@item.Company</td>
+                                            <td>@item.Status</td>
+                                            <td><a asp-controller="OrderCard" asp-action="Index" asp-route-id="@item.ID"  class="btn btn-success">Dəyiş</a></td>
+                                        </tr>
+                                        
+                                        }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+else
+{
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                           <h1>404 ERROR</h1>
+                           <p>Giriş etmək üçün  <a asp-controller="Login"  asp-action="SignIn" >  Bura click edin...</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

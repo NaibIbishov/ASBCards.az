@@ -1,0 +1,113 @@
+﻿@model DTO.DTOEntity.OrderCardDTO
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #hid{
+        display:none;
+    }
+</style>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Kart statusunun dəyişdirilməsi</h5>
+                </div>
+                <div class="ibox-content">
+                    <form method="post">
+                        <div class="form-group  row">
+                            <label class="col-sm-1  col-form-label" >Ad</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Name" maxlength="20" class="form-control" readonly="readonly"></div>
+                        </div>
+                        <div class="form-group  row">
+                            <label class="col-sm-1 col-form-label"  >Soyad</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Surname" maxlength="20" class="form-control" readonly="readonly"></div>
+                        </div>
+                            <div class="form-group  row">
+                            <label class="col-sm-1 col-form-label">Ata adı</label>
+                            <div class="col-sm-3"><input type="text" asp-for="FatherName" maxlength="25" class="form-control" readonly="readonly"></div>
+                        </div>
+                                <div class="form-group  row">
+                            <label class="col-sm-1 col-form-label">Fincode</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Fincode" maxlength="7" class="form-control" readonly="readonly"> </div>
+                        </div>
+                        <div class="form-group  row">
+                          
+                            <label class="col-sm-1 col-form-label">Status</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Status" maxlength="50" class="form-control"></div>
+                        </div>
+                        <div class="form-group  row">
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button asp-controller="Home" asp-action="Index" class="btn btn-danger btn-sm" type="submit">İmtina</button>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary btn-sm" type="submit">Təsdiq et</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group  row">
+                            <label class="col-sm-1 col-form-label" id="hid">Seriya</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Seriya" id="hid" maxlength="3" class="form-control" /> </div>
+
+                            <label class="col-sm-1 col-form-label" id="hid">Seriya№</label>
+                            <div class="col-sm-3"><input type="text" asp-for="SeriyaNo" id="hid" maxlength="13" class="form-control" /> </div>
+
+                            <label class="col-sm-1 col-form-label" id="hid">Verilmə yeri</label>
+                            <div class="col-sm-3"><input type="text" asp-for="VerilmeYeri" id="hid" maxlength="30" class="form-control" /> </div>
+
+                       
+                            <label class="col-sm-1 col-form-label" id="hid">Verilmə tarixi</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Verilmetarixi" id="hid" class="form-control" /> </div>
+                            
+                            <label class="col-sm-1 col-form-label" id="hid">Mobil nömrə</label>
+                            <div class="col-sm-3"><input type="tel" asp-for="TelNumber" id="hid" maxlength="10" class="form-control" /> </div>
+                       
+                            <label class="col-sm-1 col-form-label" id="hid">Doğum tarixi</label>
+                            <div class="col-sm-3"><input type="text" asp-for="Dogumtarixi" id="hid" class="form-control" /> </div>
+                            <label class="col-sm-1 col-form-label" id="hid">Doğulduğu yer</label>
+                            <div class="col-sm-3"><input type="text" asp-for="DogumYeri" id="hid" maxlength="30" class="form-control" /> </div>
+                            <label class="col-sm-1 col-form-label" id="hid">Ana adı</label>
+                            <div class="col-sm-3"><input type="text" asp-for="MotherName" id="hid" maxlength="15" class="form-control" /> </div>
+
+                            <label class="col-sm-2 col-form-label" id="hid">Faktiki ünvanı</label>
+                            <div class="col-sm-6"><input type="text" asp-for="FatikiUnvan" id="hid" maxlength="100" class="form-control"></div>
+                            <label class="col-sm-1 col-form-label" id="hid">Qızlıq soyadı(ana)</label>
+                            <div class="col-sm-3"><input type="text" asp-for="MotherSurname" id="hid" maxlength="20" class="form-control" /> </div>
+                      
+                            <label class="col-sm-2 col-form-label" id="hid">İşlədiyi şirkət</label>
+                            <div class="col-sm-6"><input type="text" asp-for="Company" id="hid" maxlength="100" class="form-control"></div>
+                       
+                            <label class="col-sm-2 col-form-label" id="hid">Kart nömrəsi</label>
+                            <div class="col-sm-6"><input type="text" asp-for="CarNo" id="hid" maxlength="8" class="form-control"></div>
+                  
+                            <label class="col-sm-2 col-form-label" id="hid">Filial kodu</label>
+                            <div class="col-sm-6"><input type="text" asp-for="FillialKodu" id="hid" maxlength="20" class="form-control"></div>
+                       
+                            <label class="col-sm-2 col-form-label" id="hid">Hesab nömrəsi</label>
+                            <div class="col-sm-6"><input type="text" asp-for="HesabNo" id="hid" maxlength="20" class="form-control"></div>
+                       
+                            <label class="col-sm-2 col-form-label" id="hid">Sub Hesab</label>
+                            <div class="col-sm-6"><input type="text" asp-for="SubHesab" id="hid" maxlength="20" class="form-control"></div>
+                       
+                            <label class="col-sm-2 col-form-label" id="hid">İstifadəçi</label>
+                            <div class="col-sm-6"><input type="text" asp-for="UserId" id="hid" maxlength="50" class="form-control"></div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

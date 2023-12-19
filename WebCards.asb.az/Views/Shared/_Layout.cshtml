@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+
+<partial name="~/Views/Partial/HeaderPartial.cshtml" />
+
+<body>
+
+    <div id="wrapper">
+
+        <partial name="~/Views/Partial/NavBarPartial.cshtml" />
+
+        <div id="page-wrapper" class="gray-bg">
+            
+            <partial name="~/Views/Partial/CommonNamePartial.cshtml" />
+
+        @RenderBody()
+
+
+            <partial name="~/Views/Partial/FooterPartial.cshtml" />
+        </div>
+
+
+    </div>
+
+
+
+    <partial name="~/Views/Partial/ScriptPartial.cshtml" />
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+﻿@model List<IFormFile>
+@{
+    ViewData["Title"] = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<form asp-controller="Excel" asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Fayl seçin:</label>
+        <input type="file" name="files" multiple />
+    </div>
+    <button asp-controller="Excel" asp-action="Upload" type="submit" class="btn btn-primary">Yüklə</button>
+</form>
+
+
+
+
+
+
