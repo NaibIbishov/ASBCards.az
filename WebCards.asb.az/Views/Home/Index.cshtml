@@ -19,7 +19,7 @@
                                         <th>Finkod</th>
                                         <th>Şirkət</th>
                                         <th>Status</th>
-                                      
+                                        <th>Redaktə et</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +31,9 @@
                                             <td>@item.Fincode</td>
                                             <td>@item.Company</td>
                                             <td>@item.Status</td>
-                                            </tr>
+                                            <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a></td>
+
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
@@ -74,7 +76,7 @@ else if (User.IsInRole("User"))
                                             <td><a asp-controller="OrderCard" asp-action="Index" asp-route-id="@item.ID"  class="btn btn-success">Dəyiş</a></td>
                                         </tr>
                                         
-                                        }
+                                    }
                                 </tbody>
                             </table>
                         </div>

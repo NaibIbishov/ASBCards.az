@@ -11,9 +11,9 @@
             <li>
                 @if (User.IsInRole("Admin"))
                 {
-                    <a asp-controller="Admin" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label">Admin</span></a>
+                    <a asp-controller="Admin" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label">İstifadəçilər</span></a>
                     <a asp-controller="Login" asp-action="SignUp"><i class="fa fa-plus"></i> <span class="nav-label">Yeni istifadəçi</span></a>
-                    <a asp-controller="Admin" asp-action="Company"><i class="fa fa-plus"></i> <span class="nav-label">Şirkətlərin siyahısı</span></a>
+@*                     <a asp-controller="Admin" asp-action="Company"><i class="fa fa-plus"></i> <span class="nav-label">Şirkətlərin siyahısı</span></a> *@
 
                     <a asp-controller="Home" asp-action="Index"><i class="fa fa-plus"></i> <span class="nav-label"> Ana Səhifə</span></a>
 @*                     <a asp-controller="OrderCard" asp-action="Details"><i class="fa fa-plus"></i> <span class="nav-label"> Sifarişlərim</span></a>

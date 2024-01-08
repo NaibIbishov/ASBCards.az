@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DTO.DTOEntity.UserDTO>
+﻿@* @model IEnumerable<DTO.DTOEntity.UserDTO>
 
 
 @{
@@ -26,9 +26,12 @@
                                 @foreach (var item in Model)
                                 {
 
-                                    <tr class="gradeX">
+                                    <tr >
+                                        @if (@item.RoleId!=1)
+                                        {
+                                            <td>@item.Company</td>
 
-                                        <td>@item.Company</td>
+                                        }
 
                                     </tr>
                                 }
@@ -41,3 +44,4 @@
     </div>
 </div>
 
+ *@

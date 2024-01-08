@@ -34,12 +34,12 @@ namespace WebCards.asb.az.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult Company()
-        {
-            var value = _userService.GetAll();
-            return View(value);
-        }
+        //[HttpGet]
+        //public IActionResult Company()
+        //{
+        //    var value = _userService.GetAll();
+        //    return View(value);
+        //}
 
 
     }

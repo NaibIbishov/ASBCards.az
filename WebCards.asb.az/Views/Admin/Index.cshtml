@@ -18,8 +18,8 @@
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Parol</th>
-                                    <th>Rol</th>
                                     <th>Yaradılma tarixi</th>
+                                    <th>Rol</th>
                                     <th>Redaktə et</th>
                                 </tr>
                             </thead>
@@ -27,25 +27,19 @@
                            
                                 @foreach (var item in Model)
                                 {
-                                    <tr class="gradeX">
-                                        <td>@item.Company</td>
-                                        <td>@item.UserName</td>
-                                        <td>@item.Email</td>
-                                        <td>@item.Password</td>
-
-                                        @if (@item.RoleId == 1)
-                                        {
-                                            <td> Admin </td>
-                                        }
-                                        else
-                                        {
+                                    @if (item.RoleId!=1)
+                                    {
+                                        <tr class="gradeX">
+                                            <td>@item.Company</td>
+                                            <td>@item.UserName</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Password</td>
+                                            <td>@(((DateTime)item.Create).ToString("dd-MM-yyyy"))</td>
                                             <td> Adi </td>
-                                        }
-                                        <td>@(((DateTime)item.Create).ToString("dd-MM-yyyy"))</td>
-
-                                        <td><a asp-controller="Admin" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a></td>
-                                      
-                                    </tr>
+                                            <td><a asp-controller="Admin" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a></td>
+                                        </tr>
+                                    }
+                                    
                                 }
                             </tbody>
                         </table>

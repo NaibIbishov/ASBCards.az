@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Concrete;
 using Helper.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,12 @@ namespace WebCards.asb.az.Controllers
         {
             var value=_orderCardService.GetAll();
             return View(value);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            _orderCardService.Delete(id);
+            return RedirectToAction("Index");
         }
 
         [Authorize(Roles = RoleKeywords.UserRole)]
